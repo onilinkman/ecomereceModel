@@ -1,0 +1,24 @@
+.Menu-body {
+  background: #f7f5f357;
+  padding: 25px;
+  max-width: 150px;
+  height: 88vh;
+  box-shadow: 5px -5px 20px 1px black;
+  margin: 15px;
+  border-style: groove;
+}
+
+.Menu-body label {
+  color: black;
+  font-size: 20px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.Menu-body input {
+  margin-bottom: 19px;
+}
+
+.Menu-body h2 {
+  text-shadow: 6px 3px 4px #9c9c9c;
+}

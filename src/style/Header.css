@@ -1,0 +1,42 @@
+.Header-content {
+  background: black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header-content img {
+  width: 160px;
+}
+
+.Header-actions {
+  text-align: end;
+  margin: 15px;
+  margin-right: 59px;
+}
+
+.Header-content a {
+  margin-left: 43px;
+  color: white;
+  text-decoration: none;
+  font-size: 23px;
+  font-family: sans-serif;
+}
+
+.Header-Links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.Links-Content {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.Links-Content img {
+  width: 55px;
+}
+
+p {
+  color: white;
+}

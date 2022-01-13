@@ -1,0 +1,19 @@
+.Bar-content {
+  display: flex;
+  justify-content: flex-end;
+  padding: 15px;
+  margin: 15px;
+  background: linear-gradient(180deg, black, transparent);
+  box-shadow: 13px 7px 15px 0px #5a5a5a;
+  text-shadow: 5px 8px 4px black;
+  border-radius: 7px;
+}
+
+.Bar-content a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: white;
+  font-size: 21px;
+  font-style: normal;
+  font-family: initial;
+}

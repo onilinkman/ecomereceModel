@@ -1,0 +1,24 @@
+.btn-option {
+  background: rgba(255, 235, 205, 0);
+  border: solid;
+  padding: 9px;
+  border-radius: 7px;
+  border-color: #0088ff;
+  color: #0088ff;
+  cursor: pointer;
+  font-size: 17px;
+  font-style: normal;
+  font-family: monospace;
+}
+
+.btn-option:hover {
+  background: rgba(172, 240, 252, 0.253);
+  border-color: #0088ff;
+  color: #0088ff;
+}
+
+.btn-option:active {
+  background: rgba(172, 240, 252, 0.815);
+  border-color: #0088ff;
+  color: #0088ff;
+}

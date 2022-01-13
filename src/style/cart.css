@@ -1,0 +1,35 @@
+.image-cart {
+  height: 136px;
+  width: 176px;
+  margin: 12px;
+}
+
+.conteiner-cart {
+  width: 430px;
+  border: solid;
+  border-radius: 15px;
+  box-shadow: 2px 7px 14px 4px #aaaaaa;
+  cursor: pointer;
+}
+
+.cart-body {
+  display: flex;
+  align-items: flex-start;
+}
+
+.font-title {
+  font-family: sans-serif;
+  font-size: 1.5em;
+  margin-top: 4px;
+}
+
+.icon-action {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.icon-action img {
+  height: 50px;
+}
