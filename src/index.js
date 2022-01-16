@@ -3,16 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-import ModalItems from "./components/ModalItems";
+import Home from "./components/home/home";
 
-var omitirDato = new Map();
-omitirDato.set("description", "description");
-omitirDato.set("urlImagen", "urlImagen");
-
-ReactDOM.render(
-  <ModalItems omitirDato={omitirDato} />,
-  document.getElementById("root")
-);
+ReactDOM.render(<Home />, document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

@@ -1,0 +1,76 @@
+{
+    "status":"200",
+    "data":[{
+        "id_object":"1",
+        "name":"Sanchez Family",
+        "type":"",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        "supplier":"DecorMueble",
+        "price":"180",
+        "liked":false,
+        "buyed":false,
+        "colors":[{
+            "id_color":"1",
+            "name":"Rick Sanchez",
+            "description":"Is a great Inventor",
+            "url":"https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        },{
+            "id_color":"2",
+            "name":"Morty Smith",
+            "description":"Is a great Inventor",
+            "url":"https://rickandmortyapi.com/api/character/avatar/2.jpeg"
+        }]
+    },{
+        "id_object":"2",
+        "name":"Smith Family",
+        "type":"",
+        "description":"The Morty Smith family",
+        "supplier":"DecorMueble2",
+        "price":"180",
+        "liked":true,
+        "buyed":false,
+        "colors":[{
+            "id_color":"3",
+            "name":"Summer Smith",
+            "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+            "url":"https://rickandmortyapi.com/api/character/avatar/3.jpeg"
+        },{
+            "id_color":"4",
+            "name":"Beth Smith",
+            "description":"Is the daughter of Rick Sanchez",
+            "url":"https://rickandmortyapi.com/api/character/avatar/4.jpeg"
+        },{
+            "id_color":"5",
+            "name":"Jerry Smith",
+            "description":"Is the son in law of Rick Sanchez",
+            "url":"https://rickandmortyapi.com/api/character/avatar/5.jpeg"
+        
+        }]
+    },{
+        "id_object":"3",
+        "name":"Alien",
+        "type":"Alien",
+        "description":"Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum",
+        "supplier":"DecorMueble3",
+        "price":"280",
+        "liked":false,
+        "buyed":true,
+        "colors":[{
+            "id_color":"6",
+            "name":"Alien",
+            "description":"Is the Alien",
+            "url":"https://rickandmortyapi.com/api/character/avatar/6.jpeg"
+        },{
+            "id_color":"7",
+            "name":"Alien",
+            "description":"Is the Alien",
+            "url":"https://rickandmortyapi.com/api/character/avatar/7.jpeg"
+        },{
+            "id_color":"8",
+            "name":"Abradolf Lincler",
+            "description":"Is the Abradolf Lincler",
+            "url":"https://rickandmortyapi.com/api/character/avatar/8.jpeg"
+        }]
+    }],
+    "messages":"Modelo de Lista de objetos que tenga un inventario"
+}

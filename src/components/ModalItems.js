@@ -113,7 +113,6 @@ class ModalItems extends React.Component {
             <div className="Detail-modal">
               <img
                 id="img_modal"
-                sdfho
                 src={this.urlImagen}
                 alt="imagenModal"
                 className="Img-modal"

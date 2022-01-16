@@ -1,7 +1,6 @@
 import React from "react";
 
 import "../style/cart.css";
-import confLogo from "../images/muebles.png";
 import likeButton from "../images/icons8-favorite-80.png";
 import disableLikeButton from "../images/favorite-disable-48.png";
 import enableBuy from "../images/buying-enable-48.png";
@@ -11,6 +10,25 @@ import loadingIcon from "../images/loading-circle.gif";
 class cart extends React.Component {
   swlike = false;
   swbuy = false;
+  description = "";
+  image = "";
+  title = "";
+  imageLike = disableLikeButton;
+  imageBuy = disableBuy;
+
+  /**
+   * @description Funcion que se encarga de enviar los datos del objeto al componente
+   */
+  setValuesAndData = (p) => {
+    this.swlike = p.liked;
+    this.swbuy = p.buyed;
+    this.description = p.description;
+    this.image = p.url;
+    this.title = p.name;
+    this.imageLike = p.liked ? likeButton : disableLikeButton;
+    this.imageBuy = p.buyed ? enableBuy : disableBuy;
+  };
+
   actionlike = (e) => {
     if (this.swlike) {
       e.target.src = disableLikeButton;
@@ -40,28 +58,28 @@ class cart extends React.Component {
   };
 
   render() {
+    // let { liked, buyed, name, description, url } = this.props;
+    this.setValuesAndData(this.props);
     return (
       <div className="conteiner-cart" onClick={this.actionClick}>
         <div className="cart-body">
           <div>
-            <img src={confLogo} alt="Logo mueble" className="image-cart" />
+            <img src={this.image} alt="Logo mueble" className="image-cart" />
           </div>
           <div className="content-cart">
             <div className="cart-title">
-              <p className="font-title">Mueble de living</p>
+              <p className="font-title">{this.title}</p>
             </div>
             <div className="cart-description">
-              <p className="font-description">
-                Aqui viente muchas cosas , descritas para este articulo
-              </p>
+              <p className="font-description">{this.description}</p>
             </div>
             <div className="icon-action">
               <img
-                src={disableLikeButton}
+                src={this.imageLike}
                 onClick={this.actionlike}
                 alt="like-button"
               />
-              <img src={disableBuy} onClick={this.actionbuy} alt="buying" />
+              <img src={this.imageBuy} onClick={this.actionbuy} alt="buying" />
             </div>
           </div>
         </div>
