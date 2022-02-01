@@ -9,6 +9,10 @@
   font-size: 17px;
   font-style: normal;
   font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
 }
 
 .btn-option:hover {
@@ -21,4 +25,15 @@
   background: rgba(172, 240, 252, 0.815);
   border-color: #0088ff;
   color: #0088ff;
+}
+
+.search-input {
+  background: url("../images/search-icon.png");
+  background-size: 23px;
+  padding: 4px;
+  padding-left: 25px;
+  background-repeat: no-repeat;
+  font-family: monospace;
+  border-radius: 10px;
+  margin: 15px;
 }

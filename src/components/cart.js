@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import "../style/cart.css";
 import likeButton from "../images/icons8-favorite-80.png";
@@ -15,6 +15,8 @@ class cart extends React.Component {
   title = "";
   imageLike = disableLikeButton;
   imageBuy = disableBuy;
+  ids;
+  urlImage;
 
   /**
    * @description Funcion que se encarga de enviar los datos del objeto al componente
@@ -22,11 +24,19 @@ class cart extends React.Component {
   setValuesAndData = (p) => {
     this.swlike = p.liked;
     this.swbuy = p.buyed;
+    this.ids = p.ids;
     this.description = p.description;
     this.image = p.url;
     this.title = p.name;
     this.imageLike = p.liked ? likeButton : disableLikeButton;
     this.imageBuy = p.buyed ? enableBuy : disableBuy;
+    fetch(p.url)
+      .then((res) => res.blob())
+      .then((blob) => {
+        let url = URL.createObjectURL(blob);
+        let image = document.getElementById("cart" + p.ids);
+        image.src = url;
+      });
   };
 
   actionlike = (e) => {
@@ -57,6 +67,10 @@ class cart extends React.Component {
     }
   };
 
+  callUrlImage = () => {
+    fetch();
+  };
+
   render() {
     // let { liked, buyed, name, description, url } = this.props;
     this.setValuesAndData(this.props);
@@ -64,7 +78,14 @@ class cart extends React.Component {
       <div className="conteiner-cart" onClick={this.actionClick}>
         <div className="cart-body">
           <div>
-            <img src={this.image} alt="Logo mueble" className="image-cart" />
+            <Suspense fallback={<img src={loadingIcon} alt="cargando" />}>
+              <img
+                alt="Logo mueble"
+                className="image-cart"
+                id={"cart" + this.ids}
+                onLoad={console.log("holas")}
+              />
+            </Suspense>
           </div>
           <div className="content-cart">
             <div className="cart-title">

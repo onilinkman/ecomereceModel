@@ -1,17 +1,24 @@
+:root {
+  --background_color: black;
+  --logo_size: 160px;
+  --headerContent_margin: 43px;
+  --margin_actions: 0px 59px 0px 0px;
+  --links_images_size: 55px;
+}
+
 .Header-content {
-  background: black;
+  background: var(--background_color);
   display: flex;
   justify-content: space-between;
 }
 
 .Header-content img {
-  width: 160px;
+  width: var(--logo_size);
 }
 
 .Header-actions {
   text-align: end;
-  margin: 15px;
-  margin-right: 59px;
+  margin: var(--margin_actions);
 }
 
 .Header-content a {
@@ -34,9 +41,18 @@
 }
 
 .Links-Content img {
-  width: 55px;
+  width: var(--links_images_size);
 }
 
 p {
   color: white;
+}
+
+@media screen and (max-width: 450px) {
+  :root {
+    --logo_size: 114px;
+    --headerContent_margin: 43px;
+    --margin_actions: 0px 10 px 0px 0px;
+    --links_images_size: 40px;
+  }
 }

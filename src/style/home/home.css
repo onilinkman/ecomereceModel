@@ -10,4 +10,19 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: stretch;
+  margin-top: 20px;
+}
+
+.Action-container {
+  padding-right: 40px;
+}
+
+@media screen and (max-width: 450px) {
+  .Home-Content {
+    display: flex;
+    justify-items: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    flex-direction: column-reverse;
+  }
 }
