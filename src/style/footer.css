@@ -1,0 +1,7 @@
+.footer {
+  background-color: #020202;
+  color: aliceblue;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}

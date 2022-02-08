@@ -5,9 +5,10 @@
 }
 
 .conteiner-cart {
+  background: white;
   width: 430px;
   height: 210px;
-  border-radius: 15px;
+  border-radius: 10px;
   box-shadow: inset 5px 3px 16px 2px #aaaaaa;
   cursor: pointer;
   margin: 0px 5px 0px 5px;

@@ -4,6 +4,7 @@ import NavBar from "../NavBar";
 import MainMenuItems from "../MainMenuItems";
 import Cart from "../cart";
 import dataTest from "../../models_json/muebles.json";
+import Footer from "../footer";
 
 import "../../style/home/home.css";
 import "../../style/material.css";
@@ -56,6 +57,9 @@ class Home extends React.Component {
               <img src={LogoCarrito} alt="button-buy" />{" "}
             </button>
           </div>
+        </div>
+        <div className="Home-Footer">
+          <Footer />
         </div>
       </div>
     );
