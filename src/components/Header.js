@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Logo from "../images/DecorMueble-logos_white.png";
 import "../style/Header.css";
@@ -13,7 +14,7 @@ class Header extends React.Component {
         <div className="Header-Links">
           <div className="Header-actions">
             <a href="#">Carrito</a>
-            <a href="#">Iniciar Sesion</a>
+            <Link to="/login">Iniciar Sesion</Link>
           </div>
           <div className="Links-Content">
             <a href="#">

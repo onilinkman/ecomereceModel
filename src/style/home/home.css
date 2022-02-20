@@ -17,8 +17,8 @@
 }
 
 .Home-Footer {
-  position: absolute;
-  bottom: 0px;
+  /* position: absolute;
+  bottom: 0px; */
   width: 100%;
 }
 
@@ -30,9 +30,9 @@
     align-items: center;
     flex-direction: column-reverse;
   }
-  .Home-Footer {
+  /*. Home-Footer {
     position: relative;
 
     width: 100%;
-  }
+  } */
 }

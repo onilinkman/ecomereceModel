@@ -1,10 +1,7 @@
 import React, { Suspense } from "react";
-import Header from "../Header";
-import NavBar from "../NavBar";
 import MainMenuItems from "../MainMenuItems";
 import Cart from "../cart";
 import dataTest from "../../models_json/muebles.json";
-import Footer from "../footer";
 
 import "../../style/home/home.css";
 import "../../style/material.css";
@@ -22,15 +19,13 @@ class Home extends React.Component {
     console.log("mostrar modal");
   };
 
+  componentWillUnmount(props) {
+    this.accion();
+  }
+
   render() {
     return (
-      <div className="Home-body">
-        <div className="Home-Header">
-          <Header />
-        </div>
-        <div className="Home-NavBar">
-          <NavBar />
-        </div>
+      <React.Fragment>
         <div className="Home-Content">
           <MainMenuItems />
           <div className="Cart-container">
@@ -58,10 +53,7 @@ class Home extends React.Component {
             </button>
           </div>
         </div>
-        <div className="Home-Footer">
-          <Footer />
-        </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
