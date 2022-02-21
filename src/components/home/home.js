@@ -19,8 +19,7 @@ class Home extends React.Component {
     console.log("mostrar modal");
   };
 
-  componentWillUnmount(props) {
-    this.accion();
+  componentWillUnmount(props) { 
   }
 
   render() {
