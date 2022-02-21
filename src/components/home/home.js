@@ -19,40 +19,36 @@ class Home extends React.Component {
     console.log("mostrar modal");
   };
 
-  componentWillUnmount(props) { 
-  }
+  componentWillUnmount(props) {}
 
   render() {
     return (
-      <React.Fragment>
-        <div className="Home-Content">
-          <MainMenuItems />
-          <div className="Cart-container">
-            {this.data.map((item) => {
-              console.log(item.id_object);
-              return (
-                <Cart
-                  key={item.id_object.toString()}
-                  ids={item.id_object}
-                  liked={item.liked}
-                  buyed={item.buyed}
-                  name={item.name}
-                  description={item.description}
-                  url={item.colors[0].url}
-                  ejecutarAccion={this.mostrarModal}
-                />
-              );
-            })}
-          </div>
-          <div className="Action-container">
-            <input className="search-input" type="text" placeholder="Buscar" />
-            <button className="btn-option">
-              Ver Carrito de Compra
-              <img src={LogoCarrito} alt="button-buy" />{" "}
-            </button>
-          </div>
+      <div className="Home-Content">
+        <MainMenuItems />
+        <div className="Cart-container">
+          {this.data.map((item) => {
+            return (
+              <Cart
+                key={item.id_object.toString()}
+                ids={item.id_object}
+                liked={item.liked}
+                buyed={item.buyed}
+                name={item.name}
+                description={item.description}
+                url={item.colors[0].url}
+                ejecutarAccion={this.mostrarModal}
+              />
+            );
+          })}
         </div>
-      </React.Fragment>
+        <div className="Action-container">
+          <input className="search-input" type="text" placeholder="Buscar" />
+          <button className="btn-option">
+            Ver Carrito de Compra
+            <img src={LogoCarrito} alt="button-buy" />{" "}
+          </button>
+        </div>
+      </div>
     );
   }
 }

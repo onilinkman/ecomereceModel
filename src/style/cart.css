@@ -6,7 +6,7 @@
 
 .conteiner-cart {
   background: white;
-  width: 430px;
+  max-width: 430px;
   height: 210px;
   border-radius: 10px;
   box-shadow: inset 5px 3px 16px 2px #aaaaaa;

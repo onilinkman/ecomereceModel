@@ -24,7 +24,7 @@
         "id_object":"2",
         "name":"Smith Family",
         "type":"",
-        "description":"The Morty Smith family",
+        "description":"The Morty Smith family Lorem ipsum is simply dummy",
         "supplier":"DecorMueble2",
         "price":"180",
         "liked":true,

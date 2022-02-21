@@ -1,55 +1,65 @@
-:root{
-    --width_container:160%;
+:root {
+  --width_container: 160%;
 }
 
-.Login-container{
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    
+.Login-container {
+  display: grid;
+  justify-content: center;
+  justify-items: center;
 }
 
-.Login-title{
-    background: #1373bf;
-    border-radius: 15px 15px 0px 0px;
-    color: white;
-    text-align: center;
-    width: var(--width_container);
+.Login-title {
+  background: #1373bf;
+  border-radius: 15px 15px 0px 0px;
+  color: white;
+  text-align: center;
+  width: var(--width_container);
 }
 
-.Login-content{
-
-    width: var(--width_container);
-    background: cadetblue;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    border-radius: 0px 0px 15px 15px;
+.Login-content {
+  width: var(--width_container);
+  background: #003b6e;
+  color: white;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 0px 0px 15px 15px;
 }
-.Login-input{
-    display: grid;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    justify-content: center;
-    
-}
-
-.Login-Button{
-    display: flex;
-    justify-content: center;
+.Login-input {
+  display: grid;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  justify-content: center;
 }
 
-.btn-login{
-    background: #00345c;
-    padding: 10px;
-    border-radius: 9px;
-    font-family: monospace;
-    color: white;
-    cursor: pointer;
+.Login-Button {
+  display: flex;
+  justify-content: center;
 }
 
-.Login-input input{
-    padding: 6px;
-    text-align: center;
-    border-radius: 10px;
-    font-family: monospace;
+.btn-login {
+  background: #00345c;
+  padding: 10px;
+  border-radius: 9px;
+  font-family: monospace;
+  color: white;
+  cursor: pointer;
+}
+
+.Login-input input {
+  padding: 6px;
+  text-align: center;
+  border-radius: 10px;
+  font-family: monospace;
+}
+
+.Login_Options {
+  text-align: center;
+}
+
+.Login_Options a {
+  text-decoration: none;
+  color: #7bb0db;
+  font-size: 20px;
+  font-family: monospace;
+  text-shadow: 0px 1px 10px black;
 }

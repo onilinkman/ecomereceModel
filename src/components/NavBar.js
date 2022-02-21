@@ -23,8 +23,6 @@ class NavBar extends React.Component {
     console.log("5.componentWillUnmount");
   }
 
- 
-
   render() {
     console.log("2.render");
     var logo;

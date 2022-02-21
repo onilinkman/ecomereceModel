@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../../style/logIn/Login.css";
 
 const themes = {
@@ -25,8 +26,15 @@ class Login extends React.Component {
             <input type="password" id="password" />
           </div>
           <div className="Login-Button">
-
-          <button className="btn-login">Iniciar Sesión</button>
+            <button className="btn-login">Iniciar Sesión</button>
+          </div>
+          <div className="Login_Options">
+            <p>
+              No tiene cuenta? creala <Link to="/signup">AQUI!!!</Link>.
+            </p>
+            <p>
+              <Link to="/">RECUPERAR</Link> cuenta de usuario
+            </p>
           </div>
         </div>
       </div>
