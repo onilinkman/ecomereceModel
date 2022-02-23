@@ -1,3 +1,4 @@
 .addItem-container {
-  background: black;
+  display: flex;
+  justify-content: space-between;
 }
