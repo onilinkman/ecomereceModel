@@ -1,0 +1,17 @@
+.addItem-input-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+  align-items: center;
+}
+
+.addItem-input-container label {
+  margin-right: 8px;
+}
+
+.addItem-input-container input {
+  border: none;
+  border-bottom: 1px solid #ccc;
+  padding: 15px;
+  font-weight: bold;
+}

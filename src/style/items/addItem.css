@@ -2,3 +2,56 @@
   display: flex;
   justify-content: space-between;
 }
+
+.addItem-container-form {
+  display: flex;
+  padding: 15px;
+  border: solid;
+  border-color: lightgrey;
+}
+
+.addItem-img-det {
+  display: flex;
+  flex-direction: column;
+}
+
+picture img {
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.addItem-detail {
+  display: grid;
+}
+
+.addItem-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.addItem_detail_input {
+  height: 65px;
+}
+
+.addItem-buttons {
+  display: flex;
+  flex-direction: column;
+  width: 12%;
+}
+
+.addItem-button {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  padding: 17px;
+  background: #0088ff;
+  border-radius: 7px;
+  color: white;
+  border: none;
+  width: 80%;
+  min-width: 100px;
+  font-size: large;
+  font-weight: bolder;
+}

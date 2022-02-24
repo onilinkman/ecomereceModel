@@ -1,7 +1,9 @@
 import React from "react";
-import ComboBox from "./comboBox";
+
+import FormItem from "./formItem";
 
 import "../../style/items/addItem.css";
+import TableLibrary from "../table";
 
 class AddItem extends React.Component {
   render() {
@@ -10,73 +12,90 @@ class AddItem extends React.Component {
       { id: 2, name: "item2" },
       { id: 3, name: "item3" },
     ];
+    var dataTable = [
+      { id: 1, name: "item1" },
+      { id: 2, name: "item2" },
+      { id: 4, name: "item3" },
+    ];
+
+    var skipHeader = new Map();
     return (
       <div className="addItem-container">
-        <div className="addItem-list">sd</div>
+        <div className="addItem-list">
+          <TableLibrary
+            data={dataTable}
+            headerExtraAfter={[
+              {
+                hola: (data, index) => {
+                  return <button onClick={() => alert(data.id)}>hola</button>;
+                },
+              },
+              {
+                esto: (data, index) => {
+                  return <button onClick={() => alert(data.id)}>hola</button>;
+                },
+              },
+              {
+                despues: (data, index) => {
+                  return <button onClick={() => alert(data.id)}>hola</button>;
+                },
+              },
+            ]}
+            headerExtraBefore={[
+              {
+                esto: (data, index) => {
+                  return <button>{data.id}</button>;
+                },
+              },
+              {
+                se: (data, index) => {
+                  return <button>{data.id}</button>;
+                },
+              },
+              {
+                mostrara: (data, index) => {
+                  return <button>{data.id}</button>;
+                },
+              },
+              {
+                antes: (data, index) => {
+                  return <button>{data.id}</button>;
+                },
+              },
+            ]}
+            skipHeader={skipHeader}
+          />
+        </div>
         <div className="addItem-form">
           <div className="addItem-container-form">
-            <div className="addItem-details"></div>
-            <div className="addItem-form">
-              <h1>Datos del Producto</h1>
-              <div className="addItem-data">
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_Name">Nombre:</label>
-                  <input
-                    type="text"
-                    placeholder="Nombre del Producto"
-                    id="addItem_Name"
-                  />
-                </div>
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_codigo">Codigo:</label>
-                  <input
-                    type="text "
-                    placeholder="Codigo del Producto"
-                    id="addItem_codigo"
-                  />
-                </div>
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_marca">Marca:</label>
-                  <input
-                    type="text"
-                    placeholder="Marca del Producto"
-                    id="addItem_marca"
-                  />
-                </div>
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_proveedor">Proveedor:</label>
-                  <input
-                    type="text"
-                    placeholder="Proveedor del Producto"
-                    id="addItem_proveedor"
-                  />
-                </div>
-                <div className="addItem-input-container">
-                  <label>Categoria:</label>
-                  {/* hacer que haga una peticion al server para obtener data */}
-                  <ComboBox data={data} />
-                </div>
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_precio">Precio:</label>
-                  <input
-                    type="text"
-                    placeholder="Precio del Producto"
-                    id="addItem_precio"
-                  />
-                </div>
-                <div className="addItem-input-container">
-                  <label htmlFor="addItem_precio_venta">Precio venta</label>
-                  <input
-                    type="text"
-                    placeholder="Precio de venta"
-                    id="addItem_precio_venta"
-                  />
-                </div>
+            <div className="addItem-img-det">
+              <picture className="addItem-image">
+                <source
+                  srcSet="https://via.placeholder.com/150"
+                  media="screen and (max-width: 360px)"
+                />
+                <img src="https://via.placeholder.com/800" alt="" />
+              </picture>
+              <div className="addItem-detail">
+                <label htmlFor="addItem_detail_input">Descripcion:</label>
+                <textarea
+                  type="text"
+                  placeholder="Ingrese la descripcion"
+                  id="addItem_detail_input"
+                  rows={5}
+                />
               </div>
+            </div>
+            <div className="addItem-form-item">
+              <h1 className="addItem-title">Datos del Producto</h1>
+              <FormItem data={data} />
             </div>
           </div>
         </div>
-        <div className="addItem-buttons">fd</div>
+        <div className="addItem-buttons">
+          <button className="addItem-button">Guardar</button>
+          <button className="addItem-button">Ver estadistica</button>
+        </div>
       </div>
     );
   }
