@@ -54,4 +54,9 @@ picture img {
   min-width: 100px;
   font-size: large;
   font-weight: bolder;
+  cursor: pointer;
+}
+
+.addItem-button:hover {
+  background: #0077ff;
 }

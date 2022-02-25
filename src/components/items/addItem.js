@@ -15,7 +15,12 @@ class AddItem extends React.Component {
     var dataTable = [
       { id: 1, name: "item1" },
       { id: 2, name: "item2" },
-      { id: 4, name: "item3" },
+      { id: 3, name: "item3" },
+      { id: 4, name: "item4" },
+      { id: 5, name: "item5" },
+      { id: 6, name: "item6" },
+      { id: 7, name: "item7" },
+      { id: 8, name: "item8" },
     ];
 
     var skipHeader = new Map();
@@ -64,6 +69,8 @@ class AddItem extends React.Component {
               },
             ]}
             skipHeader={skipHeader}
+            className="addItem-table"
+            idName="addItem-table"
           />
         </div>
         <div className="addItem-form">
