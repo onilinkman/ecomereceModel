@@ -4,9 +4,10 @@ class TableLibrary extends React.Component {
   constructor(props) {
     super(props);
     this.maxRows = 5;
-    this.numberOfObjects = 10;
+
+    this.numberOfObjects = this.countNumeberOfPages();
     this.pageActual = 1;
-    this.pointer = 4;
+    this.pointer = 1;
     this.idName =
       this.props.idName === undefined ? "tableDefault" : this.props.idName;
     this.className =
@@ -20,8 +21,15 @@ class TableLibrary extends React.Component {
       var dataKeys = Object.keys(this.props.data[0]);
       return (
         <table className={this.className} id={this.idName}>
-          <thead>{this.CreateTableHeader(this.props.data, dataKeys)}</thead>
-          <tbody>{this.CreateBody(this.props.data, dataKeys)}</tbody>
+          <thead>
+            {this.CreateTableHeader(
+              this.limitedRows(this.props.data),
+              dataKeys
+            )}
+          </thead>
+          <tbody>
+            {this.CreateBody(this.limitedRows(this.props.data), dataKeys)}
+          </tbody>
         </table>
       );
     }
@@ -60,6 +68,22 @@ class TableLibrary extends React.Component {
       });
       return newTh;
     }
+  }
+
+  countNumeberOfPages() {
+    return Math.ceil(this.props.data.length / this.maxRows);
+  }
+
+  limitedRows(data) {
+    var newData = [];
+    var start = this.pointer * this.maxRows - this.maxRows;
+    var end = this.pointer * this.maxRows;
+    for (var i = start; i < end; i++) {
+      if (data[i] !== undefined) {
+        newData.push(data[i]);
+      }
+    }
+    return newData;
   }
 
   /**
@@ -108,23 +132,46 @@ class TableLibrary extends React.Component {
     return newTd;
   }
 
-  CreatePaginador(actualPage, totalPages) {
+  shouldComponentUpdate(nextProps) {
+    return true;
+  }
+
+  CreatePaginator(actualPage, totalPages) {
+    let onclick = () => {
+      this.render();
+      this.setState({});
+      this.pointer = actualPage;
+    };
+    let styleSelected = {
+      selected: { background: "red" },
+      unselected: { background: "white" },
+    };
+    let button = (
+      <button
+        onClick={onclick}
+        key={actualPage}
+        style={
+          this.pointer === actualPage
+            ? styleSelected.selected
+            : styleSelected.unselected
+        }
+      >
+        {actualPage}
+      </button>
+    );
     if (actualPage < totalPages) {
-      if (actualPage < this.pointer + 4 || actualPage == totalPages - 1) {
+      if (actualPage < this.pointer + 2 || actualPage === totalPages - 1) {
+        return [button, this.CreatePaginator(actualPage + 1, totalPages)];
+      } else if (actualPage === this.pointer + 2) {
         return [
-          <button>{actualPage}</button>,
-          this.CreatePaginador(actualPage + 1, totalPages),
-        ];
-      } else if (actualPage == this.pointer + 4) {
-        return [
-          <h3>....</h3>,
-          this.CreatePaginador(actualPage + 1, totalPages),
+          <h3 key={actualPage}>....</h3>,
+          this.CreatePaginator(actualPage + 1, totalPages),
         ];
       } else {
-        return this.CreatePaginador(actualPage + 1, totalPages);
+        return this.CreatePaginator(actualPage + 1, totalPages);
       }
     }
-    return <button>{actualPage}</button>;
+    return button;
   }
 
   render() {
@@ -132,7 +179,10 @@ class TableLibrary extends React.Component {
       <div>
         {this.CreateTable()}
         <div style={{ display: "flex" }}>
-          {this.CreatePaginador(this.pointer + 1, 14)}
+          {this.CreatePaginator(
+            this.pointer > 2 ? this.pointer - 2 : 1,
+            this.numberOfObjects
+          )}
         </div>
       </div>
     );
