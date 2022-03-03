@@ -15,7 +15,7 @@ class AddItem extends React.Component {
     var dataTable = [
       { id: 1, name: "item1" },
       { id: 2, name: "item2" },
-      { id: 3, name: "item3" },
+      { id: 3, name: "itemasdfasdfsadgsadfgdsfadsfcxvsdf3" },
       { id: 4, name: "item4" },
       { id: 5, name: "item5" },
       { id: 6, name: "item6" },
@@ -23,14 +23,15 @@ class AddItem extends React.Component {
       { id: 8, name: "item8" },
       { id: 9, name: "item9" },
       { id: 11, name: "item1" },
-      { id: 12, name: "item2" },
-      { id: 13, name: "item3" },
+      { id: 12, name: "item12" },
+      { id: 13, name: "item13" },
       { id: 14, name: "item4" },
       { id: 15, name: "item5" },
       { id: 16, name: "item6" },
       { id: 17, name: "item7" },
       { id: 18, name: "item8" },
       { id: 19, name: "item9" },
+      { id: 20, name: "item20" },
     ];
 
     var skipHeader = new Map();
@@ -91,7 +92,34 @@ class AddItem extends React.Component {
                   srcSet="https://via.placeholder.com/150"
                   media="screen and (max-width: 360px)"
                 />
-                <img src="https://via.placeholder.com/800" alt="" />
+                <img
+                  src="https://via.placeholder.com/800"
+                  alt=""
+                  onClick={() => {
+                    document.getElementById("addItem_imagenAdd").click();
+                  }}
+                  style={{
+                    cursor: "pointer",
+                  }}
+                  id="addItem_image"
+                />
+                <input
+                  accept="image/*"
+                  type="file"
+                  id="addItem_imagenAdd"
+                  style={{ display: "none" }}
+                  onChange={(e) => {
+                    let file = e.target.files[0];
+                    if (file) {
+                      let reader = new FileReader();
+                      reader.onload = () => {
+                        document.getElementById("addItem_image").src =
+                          reader.result;
+                      };
+                      reader.readAsDataURL(file);
+                    }
+                  }}
+                />
               </picture>
               <div className="addItem-detail">
                 <label htmlFor="addItem_detail_input">Descripcion:</label>

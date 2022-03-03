@@ -176,7 +176,7 @@ class TableLibrary extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className={this.props.className + "-container"}>
         {this.CreateTable()}
         <div style={{ display: "flex" }}>
           {this.CreatePaginator(

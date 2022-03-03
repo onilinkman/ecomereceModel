@@ -42,6 +42,11 @@ picture img {
   width: 12%;
 }
 
+.addItem-table-container {
+  overflow-x: auto;
+  width: 390px;
+}
+
 .addItem-button {
   margin-top: 25px;
   margin-bottom: 25px;
@@ -59,4 +64,43 @@ picture img {
 
 .addItem-button:hover {
   background: #0077ff;
+}
+
+@media screen and (max-width: 1100px) {
+  .addItem-container {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .addItem-list {
+    overflow-x: auto;
+    width: 350px;
+  }
+  .addItem-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .addItem-container-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .addItem-list {
+    overflow-x: auto;
+    width: 350px;
+  }
+  .addItem-buttons {
+    display: flex;
+    flex-direction: column;
+    width: 350px;
+
+    align-items: center;
+  }
 }
