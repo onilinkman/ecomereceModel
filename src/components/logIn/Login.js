@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import "../../style/logIn/Login.css";
 
 const themes = {
@@ -12,6 +12,9 @@ const themes = {
 class Login extends React.Component {
   state = {
     loading: false,
+    redirect: false,
+    loginFailed: false,
+    messageResponse: null,
     error: null,
     data: null,
   };
@@ -19,23 +22,31 @@ class Login extends React.Component {
   componentDidMount() {}
 
   fetchData = () => {
-    console.log("hola");
     this.setState({ loading: true, error: null });
     var body = JSON.stringify(this.getFormLogin());
-    console.log(body);
     fetch("http://192.168.0.123:8000/api/v1/users", {
       method: "POST",
+      credentials: "include",
+      mode: "cors",
 
+      headers: {
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*",
+      },
       body: body,
     })
       .then((data) => data.json())
       .then((data) => {
-        this.setState({ loading: false, data });
-        console.log(data);
+        this.setState({ loading: false });
+        if (data.status === 200) {
+          this.setState({ redirect: true });
+        } else {
+          this.setState({ loginFailed: true, messageResponse: data.message });
+        }
       })
       .catch((error) => {
-        this.setState({ loading: false, data: error });
-        console.log(error);
+        this.setState({ loading: false });
+        console.log("error:", error);
       });
   };
 
@@ -49,8 +60,20 @@ class Login extends React.Component {
   render() {
     var viewLoading;
 
+    var logFail;
+
+    if (this.state.redirect) {
+      return <Navigate to="/" />;
+    }
     if (this.state.loading) {
       viewLoading = <div className="loading">Loading...</div>;
+    }
+    if (this.state.loginFailed) {
+      logFail = (
+        <div className="Login-error">
+          <p className="Login-msj-error">{this.state.messageResponse}</p>
+        </div>
+      );
     }
 
     return (
@@ -72,6 +95,7 @@ class Login extends React.Component {
               Iniciar Sesión
             </button>
           </div>
+          {logFail}
           <div className="Login_Options">
             <p>
               No tiene cuenta? creala <Link to="/signup">AQUI!!!</Link>.

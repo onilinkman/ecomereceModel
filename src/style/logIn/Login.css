@@ -63,3 +63,10 @@
   font-family: monospace;
   text-shadow: 0px 1px 10px black;
 }
+
+.Login-msj-error {
+  text-align: center;
+  background: brown;
+  font-family: monospace;
+  font-size: large;
+}
