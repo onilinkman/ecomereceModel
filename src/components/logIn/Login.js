@@ -1,6 +1,7 @@
 import React from "react";
 import { Link, Navigate } from "react-router-dom";
 import "../../style/logIn/Login.css";
+import Params from "../../parameters.json";
 
 const themes = {
   light: {
@@ -24,7 +25,7 @@ class Login extends React.Component {
   fetchData = () => {
     this.setState({ loading: true, error: null });
     var body = JSON.stringify(this.getFormLogin());
-    fetch("http://192.168.0.123:8000/api/v1/users", {
+    fetch(Params.url + "/api/v1/users", {
       method: "POST",
       credentials: "include",
       mode: "cors",
@@ -40,6 +41,7 @@ class Login extends React.Component {
         this.setState({ loading: false });
         if (data.status === 200) {
           this.setState({ redirect: true });
+          this.props.actionBeforeLogin();
         } else {
           this.setState({ loginFailed: true, messageResponse: data.message });
         }
