@@ -1,7 +1,8 @@
 import React from "react";
 
 import Header from "../components/Header";
-import NavBar from "../components/NavBar";
+//import NavBar from "../components/NavBar";
+import NavBar from "./navbar/navbar";
 import Footer from "../components/footer";
 
 class Layout extends React.Component {
@@ -21,14 +22,36 @@ class Layout extends React.Component {
 
   render() {
     const children = this.props.children;
+    var listUl = [
+      {
+        name: "Home",
+        link: "/",
+        content: [],
+      },
+      {
+        name: "Iniciar Sesión",
+        link: "/login",
+        content: [],
+      },
+      {
+        name: "Roles",
+        link: "",
+        content: [
+          {
+            name: "Administrador",
+            link: "/addItem",
+          },
+        ],
+      },
+      {
+        name: "Cerrar Session",
+        link: "/login",
+        content: [],
+      },
+    ];
     return (
       <React.Fragment>
-        <div className="Home-Header">
-          <Header ref={this.refHeader} />
-          <div className="Home-NavBar">
-            <NavBar />
-          </div>
-        </div>
+        <NavBar listUl={listUl} />
 
         {children}
         <div className="Home-Footer">

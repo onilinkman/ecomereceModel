@@ -2,6 +2,8 @@ import React from "react";
 import { Link, Navigate } from "react-router-dom";
 
 import Logo from "../images/DecorMueble-logos_white.png";
+import Dropdown from "./toolsComponents/dropdown";
+
 import "../style/Header.css";
 import WhatsappLogo from "../images/WhatsApp-Logotipo.png";
 import FacebookLogo from "../images/facebook_icon.png";
@@ -66,7 +68,15 @@ class Header extends React.Component {
   render() {
     let rendLogin;
     if (this.state.isLogin) {
-      rendLogin = <button onClick={this.logoutFetch}>Salir</button>;
+      //rendLogin = <button onClick={this.logoutFetch}>Salir</button>;
+      rendLogin = (
+        <Dropdown
+          elements={[
+            { name: "Agregar Item", url: "/addItem" },
+            { name: "Salir", url: "/logout" },
+          ]}
+        />
+      );
     } else {
       rendLogin = <Link to="/login">Iniciar Sesion</Link>;
     }
