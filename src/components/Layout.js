@@ -48,6 +48,11 @@ class Layout extends React.Component {
         link: "/login",
         content: [],
       },
+      {
+        name: "lo que sea",
+        link: "/sadf",
+        content: [],
+      },
     ];
     return (
       <React.Fragment>
